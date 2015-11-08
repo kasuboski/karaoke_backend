@@ -4,7 +4,11 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+    if params.has_key?(:limit)
+      @songs = Song.limit(params[:limit])
+    else
+      @songs = Song.all
+    end
 
     render json: @songs
   end
