@@ -10,7 +10,9 @@ class SongsController < ApplicationController
       @songs = Song.all
     end
 
-    render json: @songs
+    expires_in 5.minute, public: true
+    fresh_when last_modified: @songs.maximum(:updated_at), public: true
+    # render json: @songs
   end
 
   # GET /songs/1
