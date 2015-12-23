@@ -12,7 +12,6 @@ gem 'rspec-rails', group: :test
 gem 'pg'
 
 
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -27,3 +26,5 @@ gem 'jbuilder'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'rack-cors', '0.3.0'
